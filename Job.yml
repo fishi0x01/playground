@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: infinite-loop
-        image: busybox
+        image: quay.io/app-sre/debug-container
         command: ["sh", "-c", "while true; do sleep 30; done"]
       restartPolicy: Never
   backoffLimit: 0
