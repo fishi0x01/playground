@@ -1,0 +1,15 @@
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: never-ending-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: infinite-loop
+        image: busybox
+        command: ["sh", "-c", "while true; do sleep 30; done"]
+      restartPolicy: Never
+  backoffLimit: 0
+
